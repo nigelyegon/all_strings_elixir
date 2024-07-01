@@ -23,8 +23,7 @@ defmodule AllStrings do
   end
 
      def initial(value) do
-       first_letter(value)
-       |>String.capitalize()
+       "#{first_letter(value) |> String.capitalize()}. "
      end
 
      def initials (full_name) do
@@ -33,5 +32,7 @@ defmodule AllStrings do
         Enum.map(list, fn name ->
           initial(name)
         end)
-     end
+        |> List.to_string()
+        |>String.trim()
+      end
   end
