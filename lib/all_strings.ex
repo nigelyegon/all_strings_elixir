@@ -12,7 +12,26 @@ defmodule AllStrings do
       :world
 
   """
-  def hello do
-    :world
+   def trim_string_one(value) do
+     String.trim(value)
+     |> String.first()
+   end
+
+    def first_letter(value) do
+     String.trim(value)
+     |> String.first()
   end
-end
+
+     def initial(value) do
+       first_letter(value)
+       |>String.capitalize()
+     end
+
+     def initials (full_name) do
+       list = String.split(full_name)
+
+        Enum.map(list, fn name ->
+          initial(name)
+        end)
+     end
+  end
